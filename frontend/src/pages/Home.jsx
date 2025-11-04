@@ -293,48 +293,89 @@ const Home = () => {
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Illur Consulting LLP</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Illur Consulting LLP is a trade technology consulting firm helping businesses simplify global supply chain and customs operations.
-              We bring years of industry experience in manufacturing, retail, automotive, pharma, and global logistics, helping companies go paperless, fully compliant, and more profitable.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <Card className="p-6 border-l-4 border-blue-600">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Vision</h3>
-                <p className="text-gray-700">
-                  To make international trade simpler, compliant, and digitally powered for every business.
-                </p>
-              </Card>
-
-              <Card className="p-6 border-l-4 border-blue-600">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Mission</h3>
-                <p className="text-gray-700">
-                  Helping enterprises adopt global trade automation with transparency, speed, and measurable cost savings.
-                </p>
-              </Card>
+          {/* About Company */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">About Illur Consulting LLP</h2>
+              <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
             </div>
 
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Core Strengths</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  '15+ years combined GTM & ERP expertise',
-                  'Strong experience with global trade software ecosystems',
-                  'Hands-on implementation, not just advisory',
-                  'Proven track record with global clients',
-                  'Highly responsive support model'
-                ].map((strength, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{strength}</span>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Illur Consulting LLP is a trade technology consulting firm helping businesses simplify global supply chain and customs operations.
+                We bring years of industry experience in manufacturing, retail, automotive, pharma, and global logistics, helping companies go paperless, fully compliant, and more profitable.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+                <Card className="p-6 border-l-4 border-blue-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                  <p className="text-gray-700">
+                    To make international trade simpler, compliant, and digitally powered for every business.
+                  </p>
+                </Card>
+
+                <Card className="p-6 border-l-4 border-blue-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                  <p className="text-gray-700">
+                    Helping enterprises adopt global trade automation with transparency, speed, and measurable cost savings.
+                  </p>
+                </Card>
+              </div>
+
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Core Strengths</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    '18+ years combined GTM & ERP expertise',
+                    'Strong experience with global trade software ecosystems',
+                    'Hands-on implementation, not just advisory',
+                    'Proven track record with global clients',
+                    'Highly responsive support model'
+                  ].map((strength, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
+                      <span className="text-gray-700">{strength}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Directors Section */}
+          <div className="bg-gray-50 rounded-xl p-8 md:p-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Leadership</h2>
+              <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              {/* Director 1 - Prasanna Kumar Illur */}
+              <div className="text-center">
+                <div className="relative inline-block mb-6">
+                  <div className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mx-auto shadow-xl">
+                    <span className="text-white text-5xl font-bold">PI</span>
                   </div>
-                ))}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Prasanna Kumar Illur</h3>
+                <p className="text-blue-600 font-semibold mb-4">Founder & Managing Director</p>
+                <p className="text-gray-700 leading-relaxed">
+                  With 18+ years of extensive experience in global trade management and customs compliance, Prasanna leads strategic initiatives and client engagements. His expertise spans GTM systems implementation, trade automation, and enterprise-level consulting across multiple industries.
+                </p>
+              </div>
+
+              {/* Director 2 - Manasa Prasanna Illur */}
+              <div className="text-center">
+                <div className="relative inline-block mb-6">
+                  <div className="w-40 h-40 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mx-auto shadow-xl">
+                    <span className="text-white text-5xl font-bold">MI</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Manasa Prasanna Illur</h3>
+                <p className="text-blue-600 font-semibold mb-4">Director - Finance & Legal</p>
+                <p className="text-gray-700 leading-relaxed">
+                  Manasa oversees the company's financial operations, accounts management, and legal compliance. Her meticulous approach ensures smooth business operations and regulatory adherence, enabling the company to maintain its reputation for excellence and transparency.
+                </p>
               </div>
             </div>
           </div>
