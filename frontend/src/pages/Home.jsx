@@ -213,45 +213,75 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Core Highlights - Auto Scrolling */}
-        <div className="bg-gray-50 py-12 overflow-hidden">
-          <style dangerouslySetInnerHTML={{__html: `
-            @keyframes scroll {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-            .animate-scroll {
-              animation: scroll 30s linear infinite;
-            }
-            .animate-scroll:hover {
-              animation-play-state: paused;
-            }
-          `}} />
-          <div className="flex animate-scroll">
-            {[...Array(2)].map((_, setIndex) => (
-              <div key={setIndex} className="flex gap-6 px-3">
-                {[
-                  { icon: Settings, text: 'GTM Configuration & Implementation' },
-                  { icon: Shield, text: 'Trade Compliance & Document Digitization' },
-                  { icon: TrendingUp, text: 'Process Re-Engineering & Automation' },
-                  { icon: FileText, text: 'Customs Duty Optimization' },
-                  { icon: Globe, text: 'Integration with ERP, Logistics & Customs Systems' },
-                  { icon: Users, text: 'Managed Support & Training' }
-                ].map((item, index) => {
-                  const Icon = item.icon;
+        {/* Core Services Carousel */}
+        <div className="bg-gray-50 py-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative">
+              {/* Carousel Container */}
+              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+                {services.map((service, index) => {
+                  const Icon = service.icon;
                   return (
-                    <div key={index} className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm whitespace-nowrap min-w-fit">
-                      <CheckCircle className="text-blue-600 flex-shrink-0" size={24} />
-                      <span className="text-gray-700 font-medium">{item.text}</span>
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                        index === currentServiceIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      }`}
+                      style={{
+                        backgroundImage: `linear-gradient(rgba(15, 45, 85, 0.8), rgba(15, 45, 85, 0.8)), url(${service.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                      }}
+                    >
+                      <div className="h-full flex items-center justify-center px-8">
+                        <div className="text-center text-white max-w-3xl">
+                          <div className="bg-white bg-opacity-20 backdrop-blur-sm w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <Icon size={40} className="text-white" />
+                          </div>
+                          <h3 className="text-4xl font-bold mb-4">{service.text}</h3>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
               </div>
-            ))}
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevService}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+                aria-label="Previous service"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={nextService}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+                aria-label="Next service"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Dots Indicator */}
+              <div className="flex justify-center gap-2 mt-6">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentServiceIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      index === currentServiceIndex
+                        ? 'bg-blue-600 w-8'
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
