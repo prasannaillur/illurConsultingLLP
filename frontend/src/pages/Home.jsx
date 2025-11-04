@@ -189,10 +189,10 @@ const Home = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div className="text-white max-w-3xl">
-              <h1 className="text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl font-bold mb-4 leading-tight">
                 Global Trade Management, Compliance & Digital Transformation Experts
               </h1>
-              <p className="text-xl mb-8 text-gray-200">
+              <p className="text-lg mb-6 text-gray-200">
                 Helping global enterprises streamline cross-border supply chain operations with smarter, faster & compliant processes.
               </p>
               <div className="flex flex-wrap gap-4">
