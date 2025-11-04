@@ -180,9 +180,9 @@ const Home = () => {
       {/* Hero Section */}
       <section id="home" className="relative pt-20">
         <div
-          className="relative h-[600px] bg-cover bg-center"
+          className="relative h-[360px] bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(15, 45, 85, 0.85), rgba(15, 45, 85, 0.85)), url(https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e)',
+            backgroundImage: 'linear-gradient(rgba(15, 45, 85, 0.75), rgba(15, 45, 85, 0.75)), url(https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
