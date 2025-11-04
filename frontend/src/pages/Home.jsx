@@ -22,6 +22,7 @@ import {
 
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,6 +30,39 @@ const Home = () => {
     phone: '',
     message: ''
   });
+
+  const services = [
+    {
+      icon: Settings,
+      text: 'GTM Configuration & Implementation',
+      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095'
+    },
+    {
+      icon: Shield,
+      text: 'Trade Compliance & Document Digitization',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
+    },
+    {
+      icon: TrendingUp,
+      text: 'Process Re-Engineering & Automation',
+      image: 'https://images.unsplash.com/photo-1606857521015-7f9fcf423740'
+    },
+    {
+      icon: FileText,
+      text: 'Customs Duty Optimization',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab'
+    },
+    {
+      icon: Globe,
+      text: 'Integration with ERP, Logistics & Customs Systems',
+      image: 'https://images.unsplash.com/photo-1573164713712-03790a178651'
+    },
+    {
+      icon: Users,
+      text: 'Managed Support & Training',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c'
+    }
+  ];
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
