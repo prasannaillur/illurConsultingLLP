@@ -59,16 +59,16 @@ const Home = () => {
       <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
+            <div className="flex items-center flex-shrink-0">
               <img
                 src="https://customer-assets.emergentagent.com/job_consult-hub-497/artifacts/kp3anrbd_IMG-20250714-WA0009%281%29.jpg"
                 alt="Illur Consulting LLP"
-                className="h-12"
+                className="h-10 w-auto object-contain"
               />
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-6 lg:space-x-8">
               <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Home
               </button>
