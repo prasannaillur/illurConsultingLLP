@@ -87,6 +87,23 @@ const Home = () => {
     window.open('https://wa.me/919663510316', '_blank');
   };
 
+  // Auto-advance carousel
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % services.length);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [services.length]);
+
+  const nextService = () => {
+    setCurrentServiceIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const prevService = () => {
+    setCurrentServiceIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
