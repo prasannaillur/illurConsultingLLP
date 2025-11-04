@@ -214,31 +214,35 @@ const Home = () => {
         </div>
 
         {/* Core Services Carousel */}
-        <div className="bg-gray-50 py-16 overflow-hidden">
+        <div className="bg-white py-8 border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative">
+            <div className="relative overflow-hidden">
               {/* Carousel Container */}
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[200px] rounded-lg overflow-hidden">
                 {services.map((service, index) => {
                   const Icon = service.icon;
                   return (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                        index === currentServiceIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                        index === currentServiceIndex 
+                          ? 'opacity-100 translate-x-0 z-10' 
+                          : index < currentServiceIndex
+                          ? 'opacity-0 -translate-x-full z-0'
+                          : 'opacity-0 translate-x-full z-0'
                       }`}
                       style={{
-                        backgroundImage: `linear-gradient(rgba(15, 45, 85, 0.8), rgba(15, 45, 85, 0.8)), url(${service.image})`,
+                        backgroundImage: `linear-gradient(rgba(15, 45, 85, 0.5), rgba(15, 45, 85, 0.5)), url(${service.image})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                       }}
                     >
-                      <div className="h-full flex items-center justify-center px-8">
-                        <div className="text-center text-white max-w-3xl">
-                          <div className="bg-white bg-opacity-20 backdrop-blur-sm w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <Icon size={40} className="text-white" />
+                      <div className="h-full flex items-center px-8">
+                        <div className="flex items-center space-x-6 text-white max-w-4xl">
+                          <div className="bg-blue-600 bg-opacity-90 w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Icon size={32} className="text-white" />
                           </div>
-                          <h3 className="text-4xl font-bold mb-4">{service.text}</h3>
+                          <h3 className="text-3xl font-bold drop-shadow-lg">{service.text}</h3>
                         </div>
                       </div>
                     </div>
@@ -249,33 +253,33 @@ const Home = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevService}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-gray-100 text-gray-800 p-2 rounded-full shadow-lg transition-all"
                 aria-label="Previous service"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <button
                 onClick={nextService}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-gray-100 text-gray-800 p-2 rounded-full shadow-lg transition-all"
                 aria-label="Next service"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
 
               {/* Dots Indicator */}
-              <div className="flex justify-center gap-2 mt-6">
+              <div className="flex justify-center gap-2 mt-4">
                 {services.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentServiceIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
+                    className={`h-2 rounded-full transition-all ${
                       index === currentServiceIndex
                         ? 'bg-blue-600 w-8'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                        : 'bg-gray-300 hover:bg-gray-400 w-2'
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
