@@ -198,13 +198,13 @@ const Home = () => {
               <div className="flex flex-wrap gap-4">
                 <Button
                   onClick={() => scrollToSection('contact')}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base"
                 >
                   Book a Consultation
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-6 text-lg"
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 text-base"
                 >
                   Download Company Profile
                 </Button>
