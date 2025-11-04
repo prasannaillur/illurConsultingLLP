@@ -162,27 +162,45 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Core Highlights */}
-        <div className="bg-gray-50 py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: Settings, text: 'GTM Configuration & Implementation' },
-                { icon: Shield, text: 'Trade Compliance & Document Digitization' },
-                { icon: TrendingUp, text: 'Process Re-Engineering & Automation' },
-                { icon: FileText, text: 'Customs Duty Optimization' },
-                { icon: Globe, text: 'Integration with ERP, Logistics & Customs Systems' },
-                { icon: Users, text: 'Managed Support & Training' }
-              ].map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div key={index} className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
-                    <CheckCircle className="text-blue-600 flex-shrink-0" size={24} />
-                    <span className="text-gray-700 font-medium">{item.text}</span>
-                  </div>
-                );
-              })}
-            </div>
+        {/* Core Highlights - Auto Scrolling */}
+        <div className="bg-gray-50 py-12 overflow-hidden">
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes scroll {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            .animate-scroll {
+              animation: scroll 30s linear infinite;
+            }
+            .animate-scroll:hover {
+              animation-play-state: paused;
+            }
+          `}} />
+          <div className="flex animate-scroll">
+            {[...Array(2)].map((_, setIndex) => (
+              <div key={setIndex} className="flex gap-6 px-3">
+                {[
+                  { icon: Settings, text: 'GTM Configuration & Implementation' },
+                  { icon: Shield, text: 'Trade Compliance & Document Digitization' },
+                  { icon: TrendingUp, text: 'Process Re-Engineering & Automation' },
+                  { icon: FileText, text: 'Customs Duty Optimization' },
+                  { icon: Globe, text: 'Integration with ERP, Logistics & Customs Systems' },
+                  { icon: Users, text: 'Managed Support & Training' }
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={index} className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm whitespace-nowrap min-w-fit">
+                      <CheckCircle className="text-blue-600 flex-shrink-0" size={24} />
+                      <span className="text-gray-700 font-medium">{item.text}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
