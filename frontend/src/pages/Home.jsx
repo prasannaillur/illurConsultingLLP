@@ -630,14 +630,18 @@ const Home = () => {
             <div>
               <Card className="p-6 border border-gray-200">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form action="https://formsubmit.co/info@illurconsulting.com" method="POST" className="space-y-4">
+                  {/* FormSubmit Configuration */}
+                  <input type="hidden" name="_subject" value="New inquiry from Illur Consulting website" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="text" name="_honey" style={{display: 'none'}} />
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
                     <Input
                       type="text"
                       name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
                       required
                       placeholder="John Doe"
                       className="h-12"
@@ -649,8 +653,6 @@ const Home = () => {
                     <Input
                       type="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       required
                       placeholder="john.doe@company.com"
                       className="h-12"
@@ -662,8 +664,6 @@ const Home = () => {
                     <Input
                       type="text"
                       name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
                       placeholder="Your Company Name"
                       className="h-12"
                     />
@@ -674,8 +674,6 @@ const Home = () => {
                     <Input
                       type="tel"
                       name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
                       placeholder="+1 (555) 000-0000"
                       className="h-12"
                     />
@@ -685,8 +683,6 @@ const Home = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-1">Message*</label>
                     <Textarea
                       name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
                       required
                       rows={4}
                       placeholder="Tell us about your GTM challenges and requirements..."
@@ -697,6 +693,9 @@ const Home = () => {
                     Send Message
                   </Button>
                 </form>
+                <p className="text-xs text-gray-500 mt-4 text-center">
+                  Your message will be sent directly to our team at info@illurconsulting.com
+                </p>
               </Card>
             </div>
           </div>
