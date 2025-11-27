@@ -208,20 +208,20 @@ const Home = () => {
               return (
                 <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border border-gray-200">
                   <div 
-                    className="h-48 bg-cover bg-center relative"
+                    className="h-32 bg-cover bg-center relative"
                     style={{
-                      backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url(${service.image})`
+                      backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url(${service.image}?w=800&q=80&auto=format&fit=crop)`
                     }}
                   >
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white bg-opacity-20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center">
-                        <Icon className="text-white" size={32} />
+                      <div className="bg-white bg-opacity-20 backdrop-blur-sm w-14 h-14 rounded-full flex items-center justify-center">
+                        <Icon className="text-white" size={28} />
                       </div>
                     </div>
                   </div>
-                  <div className="p-8">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </Card>
               );
