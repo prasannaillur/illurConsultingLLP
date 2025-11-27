@@ -316,31 +316,42 @@ const Home = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Case Study 1 - E2Open Donaldson */}
-            <Card className="p-8 border border-gray-200 hover:shadow-xl transition-all">
-              <div className="bg-blue-50 px-3 py-1 rounded-full text-blue-900 text-xs font-semibold inline-block mb-4">
-                E2OPEN
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Donaldson Company - Global Trade Platform</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Led end-to-end E2Open GTM implementation for a Fortune 500 manufacturing leader, streamlining customs compliance across 40+ countries.
-              </p>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">Reduced compliance processing time by 60%</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">Automated 90% of documentation workflows</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">Go-live on schedule with zero downtime</span>
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all group">
+              <div 
+                className="h-40 bg-cover bg-center relative"
+                style={{
+                  backgroundImage: 'linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab)'
+                }}
+              >
+                <div className="absolute top-4 left-4">
+                  <div className="bg-white px-3 py-1 rounded-full text-blue-900 text-xs font-semibold">
+                    E2OPEN
+                  </div>
                 </div>
               </div>
-              <Button variant="outline" className="w-full border-blue-900 text-blue-900 hover:bg-blue-50">
-                View Full Case Study
-              </Button>
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Donaldson Company - Global Trade Platform</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Led end-to-end E2Open GTM implementation for a Fortune 500 manufacturing leader, streamlining customs compliance across 40+ countries.
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">Reduced compliance processing time by 60%</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">Automated 90% of documentation workflows</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">Go-live on schedule with zero downtime</span>
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full border-blue-900 text-blue-900 hover:bg-blue-50">
+                  View Full Case Study
+                </Button>
+              </div>
             </Card>
 
             {/* Case Study 2 - Template */}
