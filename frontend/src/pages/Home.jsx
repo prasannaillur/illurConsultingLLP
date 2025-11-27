@@ -61,7 +61,7 @@ const Home = () => {
           <div className="flex justify-between items-center h-20">
             <div className="flex flex-col">
               <span className="text-2xl font-extrabold text-gray-900 tracking-wide">ILLUR CONSULTING</span>
-              <span className="text-[9px] text-gray-600 tracking-widest font-medium">LEAD WITH CLARITY, GROW WITH STRATEGY</span>
+              <span className="text-xs text-gray-600 tracking-wide font-normal mt-0.5">Lead with Clarity, Grow with Strategy</span>
             </div>
 
             {/* Desktop Navigation */}
