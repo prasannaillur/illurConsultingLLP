@@ -182,32 +182,47 @@ const Home = () => {
               {
                 icon: Settings,
                 title: 'Global Trade Management System Implementation',
-                description: 'End-to-end deployment of E2Open, WiseTech Global, SAP GTS, and Oracle GTM platforms. Configuration, testing, go-live support, and post-deployment optimization.'
+                description: 'End-to-end deployment of E2Open, WiseTech Global, SAP GTS, and Oracle GTM platforms. Configuration, testing, go-live support, and post-deployment optimization.',
+                image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095'
               },
               {
                 icon: TrendingUp,
                 title: 'Process Design & Optimization for Trade Compliance',
-                description: 'Streamline customs workflows, duty optimization strategies, restricted party screening, and documentation automation for faster, compliant operations.'
+                description: 'Streamline customs workflows, duty optimization strategies, restricted party screening, and documentation automation for faster, compliant operations.',
+                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
               },
               {
                 icon: Database,
                 title: 'System Integrations',
-                description: 'Seamless integration with SAP, Oracle ERP, E2Open, WiseTech Global, 3PL systems, and customs portals. API design, data mapping, and real-time connectivity.'
+                description: 'Seamless integration with SAP, Oracle ERP, E2Open, WiseTech Global, 3PL systems, and customs portals. API design, data mapping, and real-time connectivity.',
+                image: 'https://images.unsplash.com/photo-1573164713712-03790a178651'
               },
               {
                 icon: Users,
                 title: 'Training & Advisory for GTM Teams',
-                description: 'Customized training programs, best practice workshops, and ongoing advisory support to maximize platform ROI and team productivity.'
+                description: 'Customized training programs, best practice workshops, and ongoing advisory support to maximize platform ROI and team productivity.',
+                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c'
               }
             ].map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="p-8 hover:shadow-lg transition-all border border-gray-200 group">
-                  <div className="bg-blue-900 w-14 h-14 rounded flex items-center justify-center mb-6 group-hover:bg-blue-800 transition-colors">
-                    <Icon className="text-white" size={28} />
+                <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border border-gray-200">
+                  <div 
+                    className="h-48 bg-cover bg-center relative"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url(${service.image})`
+                    }}
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-white bg-opacity-20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center">
+                        <Icon className="text-white" size={32} />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <div className="p-8">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  </div>
                 </Card>
               );
             })}
