@@ -128,33 +128,42 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="inline-block px-4 py-2 bg-blue-50 text-blue-900 rounded-full text-sm font-medium mb-6">
-              Global Trade Management Specialists
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Enterprise GTM Implementation & Trade Compliance Excellence
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl">
-              We help global enterprises deploy and optimize E2Open, WiseTech Global, and SAP GTM platforms—streamlining customs compliance, reducing duty spend, and accelerating cross-border operations.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button
-                onClick={() => scrollToSection('contact')}
-                className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-6 text-base font-medium rounded flex items-center gap-2"
-              >
-                Book a Consultation
-                <ArrowRight size={18} />
-              </Button>
-              <Button
-                onClick={() => scrollToSection('services')}
-                variant="outline"
-                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-base font-medium rounded"
-              >
-                Explore Services
-              </Button>
+      <section id="home" className="relative pt-20 overflow-hidden">
+        <div 
+          className="relative h-[500px] bg-cover bg-center"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.92)), url(https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
+            <div className="max-w-4xl text-white">
+              <div className="inline-block px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
+                Global Trade Management Specialists
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Enterprise GTM Implementation & Trade Compliance Excellence
+              </h1>
+              <p className="text-xl text-gray-100 mb-8 leading-relaxed max-w-3xl">
+                We help global enterprises deploy and optimize E2Open, WiseTech Global, and SAP GTM platforms—streamlining customs compliance, reducing duty spend, and accelerating cross-border operations.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-white hover:bg-gray-100 text-blue-900 px-8 py-6 text-base font-medium rounded flex items-center gap-2"
+                >
+                  Book a Consultation
+                  <ArrowRight size={18} />
+                </Button>
+                <Button
+                  onClick={() => scrollToSection('services')}
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-6 text-base font-medium rounded"
+                >
+                  Explore Services
+                </Button>
+              </div>
             </div>
           </div>
         </div>
