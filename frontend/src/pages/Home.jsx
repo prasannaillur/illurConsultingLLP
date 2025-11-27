@@ -130,9 +130,9 @@ const Home = () => {
       {/* Hero Section */}
       <section id="home" className="relative pt-20 overflow-hidden">
         <div 
-          className="relative h-[500px] bg-cover bg-center"
+          className="relative h-[375px] bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.92)), url(https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e)',
+            backgroundImage: 'linear-gradient(rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.92)), url(https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?w=1920&q=80&auto=format&fit=crop)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
