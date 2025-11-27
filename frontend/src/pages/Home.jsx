@@ -355,59 +355,81 @@ const Home = () => {
             </Card>
 
             {/* Case Study 2 - Template */}
-            <Card className="p-8 border border-gray-200 hover:shadow-xl transition-all bg-blue-50 bg-opacity-30">
-              <div className="bg-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-semibold inline-block mb-4">
-                [PLATFORM NAME]
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">[Client Name] - [Project Title]</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                [Brief description of the project, challenge addressed, and scope of work. 2-3 sentences about what was delivered.]
-              </p>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">[Key measurable outcome #1]</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">[Key measurable outcome #2]</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">[Key measurable outcome #3]</span>
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all group">
+              <div 
+                className="h-40 bg-cover bg-center relative"
+                style={{
+                  backgroundImage: 'linear-gradient(rgba(100, 116, 139, 0.8), rgba(100, 116, 139, 0.8)), url(https://images.unsplash.com/photo-1606857521015-7f9fcf423740)'
+                }}
+              >
+                <div className="absolute top-4 left-4">
+                  <div className="bg-white px-3 py-1 rounded-full text-gray-700 text-xs font-semibold">
+                    [PLATFORM NAME]
+                  </div>
                 </div>
               </div>
-              <Button variant="outline" className="w-full border-gray-400 text-gray-700 hover:bg-gray-100">
-                View Full Case Study
-              </Button>
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">[Client Name] - [Project Title]</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  [Brief description of the project, challenge addressed, and scope of work. 2-3 sentences about what was delivered.]
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">[Key measurable outcome #1]</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">[Key measurable outcome #2]</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">[Key measurable outcome #3]</span>
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full border-gray-400 text-gray-700 hover:bg-gray-100">
+                  View Full Case Study
+                </Button>
+              </div>
             </Card>
 
             {/* Case Study 3 - Template */}
-            <Card className="p-8 border border-gray-200 hover:shadow-xl transition-all bg-blue-50 bg-opacity-30">
-              <div className="bg-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-semibold inline-block mb-4">
-                [PLATFORM NAME]
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">[Client Name] - [Project Title]</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                [Brief description of the project, challenge addressed, and scope of work. 2-3 sentences about what was delivered.]
-              </p>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">[Key measurable outcome #1]</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">[Key measurable outcome #2]</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="text-green-600" size={16} />
-                  <span className="text-gray-700">[Key measurable outcome #3]</span>
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all group">
+              <div 
+                className="h-40 bg-cover bg-center relative"
+                style={{
+                  backgroundImage: 'linear-gradient(rgba(100, 116, 139, 0.8), rgba(100, 116, 139, 0.8)), url(https://images.unsplash.com/photo-1593617761943-9099951a0769)'
+                }}
+              >
+                <div className="absolute top-4 left-4">
+                  <div className="bg-white px-3 py-1 rounded-full text-gray-700 text-xs font-semibold">
+                    [PLATFORM NAME]
+                  </div>
                 </div>
               </div>
-              <Button variant="outline" className="w-full border-gray-400 text-gray-700 hover:bg-gray-100">
-                View Full Case Study
-              </Button>
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">[Client Name] - [Project Title]</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  [Brief description of the project, challenge addressed, and scope of work. 2-3 sentences about what was delivered.]
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">[Key measurable outcome #1]</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">[Key measurable outcome #2]</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="text-green-600" size={16} />
+                    <span className="text-gray-700">[Key measurable outcome #3]</span>
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full border-gray-400 text-gray-700 hover:bg-gray-100">
+                  View Full Case Study
+                </Button>
+              </div>
             </Card>
           </div>
         </div>
