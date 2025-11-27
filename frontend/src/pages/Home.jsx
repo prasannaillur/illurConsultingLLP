@@ -5,25 +5,27 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import {
-  Ship,
-  Globe,
-  FileText,
-  Shield,
-  TrendingUp,
   Settings,
   Users,
   CheckCircle,
   Mail,
   Phone,
   MapPin,
-  ChevronDown,
   Menu,
-  X
+  X,
+  ArrowRight,
+  Database,
+  TrendingUp,
+  Shield,
+  Award,
+  Zap,
+  Target,
+  BarChart3,
+  Quote
 } from 'lucide-react';
 
 const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,39 +33,6 @@ const Home = () => {
     phone: '',
     message: ''
   });
-
-  const services = [
-    {
-      icon: Settings,
-      text: 'GTM Configuration & Implementation',
-      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095'
-    },
-    {
-      icon: Shield,
-      text: 'Trade Compliance & Document Digitization',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
-    },
-    {
-      icon: TrendingUp,
-      text: 'Process Re-Engineering & Automation',
-      image: 'https://images.unsplash.com/photo-1606857521015-7f9fcf423740'
-    },
-    {
-      icon: FileText,
-      text: 'Customs Duty Optimization',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab'
-    },
-    {
-      icon: Globe,
-      text: 'Integration with ERP, Logistics & Customs Systems',
-      image: 'https://images.unsplash.com/photo-1573164713712-03790a178651'
-    },
-    {
-      icon: Users,
-      text: 'Managed Support & Training',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c'
-    }
-  ];
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -88,55 +57,35 @@ const Home = () => {
     window.open('https://wa.me/919663510316', '_blank');
   };
 
-  // Auto-advance carousel
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentServiceIndex((prev) => (prev + 1) % services.length);
-    }, 4000); // Change slide every 4 seconds
-
-    return () => clearInterval(interval);
-  }, [services.length]);
-
-  const nextService = () => {
-    setCurrentServiceIndex((prev) => (prev + 1) % services.length);
-  };
-
-  const prevService = () => {
-    setCurrentServiceIndex((prev) => (prev - 1 + services.length) % services.length);
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center flex-shrink-0">
-              <img
-                src="https://customer-assets.emergentagent.com/job_consult-hub-497/artifacts/kp3anrbd_IMG-20250714-WA0009%281%29.jpg"
-                alt="Illur Consulting LLP"
-                className="h-10 w-auto object-contain"
-              />
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-gray-900 tracking-tight">ILLUR CONSULTING</span>
+              <span className="text-xs text-gray-600 tracking-wide">Lead with Clarity, Grow with Strategy</span>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-6 lg:space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <nav className="hidden md:flex space-x-8">
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                About
-              </button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
                 Services
               </button>
-              <button onClick={() => scrollToSection('industries')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('industries')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
                 Industries
               </button>
-              <button onClick={() => scrollToSection('why-us')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                Why Us
+              <button onClick={() => scrollToSection('case-studies')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
+                Case Studies
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
+                About
+              </button>
+              <button onClick={() => scrollToSection('contact')} className="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800 transition-colors text-sm font-medium">
                 Contact
               </button>
             </nav>
@@ -154,22 +103,22 @@ const Home = () => {
           {mobileMenuOpen && (
             <div className="md:hidden py-4 border-t border-gray-200">
               <div className="flex flex-col space-y-4">
-                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 text-left">
+                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-900 text-left">
                   Home
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 text-left">
-                  About
-                </button>
-                <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 text-left">
+                <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-900 text-left">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('industries')} className="text-gray-700 hover:text-blue-600 text-left">
+                <button onClick={() => scrollToSection('industries')} className="text-gray-700 hover:text-blue-900 text-left">
                   Industries
                 </button>
-                <button onClick={() => scrollToSection('why-us')} className="text-gray-700 hover:text-blue-600 text-left">
-                  Why Us
+                <button onClick={() => scrollToSection('case-studies')} className="text-gray-700 hover:text-blue-900 text-left">
+                  Case Studies
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 text-left">
+                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-900 text-left">
+                  About
+                </button>
+                <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-900 text-left">
                   Contact
                 </button>
               </div>
@@ -179,296 +128,77 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-20">
-        <div
-          className="relative h-[360px] bg-cover bg-center"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(15, 45, 85, 0.75), rgba(15, 45, 85, 0.75)), url(https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-            <div className="text-white max-w-3xl">
-              <h1 className="text-4xl font-bold mb-4 leading-tight">
-                Global Trade Management, Compliance & Digital Transformation Experts
-              </h1>
-              <p className="text-lg mb-6 text-gray-200">
-                Helping global enterprises streamline cross-border supply chain operations with smarter, faster & compliant processes.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  onClick={() => scrollToSection('contact')}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base"
-                >
-                  Book a Consultation
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 text-base"
-                >
-                  Download Company Profile
-                </Button>
-              </div>
+      <section id="home" className="relative pt-32 pb-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <div className="inline-block px-4 py-2 bg-blue-50 text-blue-900 rounded-full text-sm font-medium mb-6">
+              Global Trade Management Specialists
             </div>
-          </div>
-        </div>
-
-        {/* Core Services Carousel */}
-        <div className="bg-white py-8 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden">
-              {/* Carousel Container */}
-              <div className="relative h-[200px] rounded-lg overflow-hidden">
-                {services.map((service, index) => {
-                  const Icon = service.icon;
-                  return (
-                    <div
-                      key={index}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                        index === currentServiceIndex 
-                          ? 'opacity-100 translate-x-0 z-10' 
-                          : index < currentServiceIndex
-                          ? 'opacity-0 -translate-x-full z-0'
-                          : 'opacity-0 translate-x-full z-0'
-                      }`}
-                      style={{
-                        backgroundImage: `linear-gradient(rgba(15, 45, 85, 0.5), rgba(15, 45, 85, 0.5)), url(${service.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    >
-                      <div className="h-full flex items-center px-8">
-                        <div className="flex items-center space-x-6 text-white max-w-4xl">
-                          <div className="bg-blue-600 bg-opacity-90 w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <Icon size={32} className="text-white" />
-                          </div>
-                          <h3 className="text-3xl font-bold drop-shadow-lg">{service.text}</h3>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevService}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-gray-100 text-gray-800 p-2 rounded-full shadow-lg transition-all"
-                aria-label="Previous service"
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Enterprise GTM Implementation & Trade Compliance Excellence
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl">
+              We help global enterprises deploy and optimize E2Open, WiseTech Global, and SAP GTM platforms—streamlining customs compliance, reducing duty spend, and accelerating cross-border operations.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                onClick={() => scrollToSection('contact')}
+                className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-6 text-base font-medium rounded flex items-center gap-2"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={nextService}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-gray-100 text-gray-800 p-2 rounded-full shadow-lg transition-all"
-                aria-label="Next service"
+                Book a Consultation
+                <ArrowRight size={18} />
+              </Button>
+              <Button
+                onClick={() => scrollToSection('services')}
+                variant="outline"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-base font-medium rounded"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              {/* Dots Indicator */}
-              <div className="flex justify-center gap-2 mt-4">
-                {services.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentServiceIndex(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentServiceIndex
-                        ? 'bg-blue-600 w-8'
-                        : 'bg-gray-300 hover:bg-gray-400 w-2'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* About Company */}
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">About Illur Consulting LLP</h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Illur Consulting LLP is a trade technology consulting firm helping businesses simplify global supply chain and customs operations.
-                We bring years of industry experience in manufacturing, retail, automotive, pharma, and global logistics, helping companies go paperless, fully compliant, and more profitable.
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-8 mt-12">
-                <Card className="p-6 border-l-4 border-blue-600">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Vision</h3>
-                  <p className="text-gray-700">
-                    To make international trade simpler, compliant, and digitally powered for every business.
-                  </p>
-                </Card>
-
-                <Card className="p-6 border-l-4 border-blue-600">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Mission</h3>
-                  <p className="text-gray-700">
-                    Helping enterprises adopt global trade automation with transparency, speed, and measurable cost savings.
-                  </p>
-                </Card>
-              </div>
-
-              <div className="mt-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Core Strengths</h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    '18+ years combined GTM & ERP expertise',
-                    'Strong experience with global trade software ecosystems',
-                    'Hands-on implementation, not just advisory',
-                    'Proven track record with global clients',
-                    'Highly responsive support model'
-                  ].map((strength, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                      <span className="text-gray-700">{strength}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Directors Section */}
-          <div className="bg-gray-50 rounded-xl p-8 md:p-12">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Leadership</h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              {/* Director 1 - Prasanna Kumar Illur */}
-              <div className="text-center">
-                <div className="relative inline-block mb-6">
-                  <div className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mx-auto shadow-xl">
-                    <span className="text-white text-5xl font-bold">PI</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Prasanna Kumar Illur</h3>
-                <p className="text-blue-600 font-semibold mb-4">Founder & Managing Director</p>
-                <p className="text-gray-700 leading-relaxed">
-                  With 18+ years of extensive experience in global trade management and customs compliance, Prasanna leads strategic initiatives and client engagements. His expertise spans GTM systems implementation, trade automation, and enterprise-level consulting across multiple industries.
-                </p>
-              </div>
-
-              {/* Director 2 - Manasa Prasanna Illur */}
-              <div className="text-center">
-                <div className="relative inline-block mb-6">
-                  <div className="w-40 h-40 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mx-auto shadow-xl">
-                    <span className="text-white text-5xl font-bold">MI</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Manasa Prasanna Illur</h3>
-                <p className="text-blue-600 font-semibold mb-4">Director - Finance & Legal</p>
-                <p className="text-gray-700 leading-relaxed">
-                  Manasa oversees the company's financial operations, accounts management, and legal compliance. Her meticulous approach ensures smooth business operations and regulatory adherence, enabling the company to maintain its reputation for excellence and transparency.
-                </p>
-              </div>
+                Explore Services
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+      <section id="services" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive GTM solutions tailored for enterprise-scale global trade operations</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: Settings,
-                title: 'GTM Software Configuration',
-                items: [
-                  'Oracle GTM / SAP GTS / Amber Road / Integration platforms',
-                  'Product classification, documentation, screening, license management',
-                  'Trade document automation & compliance workflows',
-                  'End-to-end implementation support'
-                ]
-              },
-              {
-                icon: Shield,
-                title: 'Trade Compliance & Risk Management',
-                items: [
-                  'Restricted party screening',
-                  'Export control & customs documentation',
-                  'License & permit management',
-                  'Duty drawback and regulatory checks'
-                ]
+                title: 'Global Trade Management System Implementation',
+                description: 'End-to-end deployment of E2Open, WiseTech Global, SAP GTS, and Oracle GTM platforms. Configuration, testing, go-live support, and post-deployment optimization.'
               },
               {
                 icon: TrendingUp,
-                title: 'Process Consulting & Optimization',
-                items: [
-                  'Supply chain digitization',
-                  'Freight, customs & broker coordination',
-                  'Trade process re-engineering',
-                  'Data quality improvement and standardization'
-                ]
+                title: 'Process Design & Optimization for Trade Compliance',
+                description: 'Streamline customs workflows, duty optimization strategies, restricted party screening, and documentation automation for faster, compliant operations.'
               },
               {
-                icon: Globe,
-                title: 'Integrations & Automation',
-                items: [
-                  'ERP, WMS, 3PL, Carrier, Customs system integrations',
-                  'API-based data exchange',
-                  'Auto-document creation & validation',
-                  'Robotic process automation (RPA)'
-                ]
+                icon: Database,
+                title: 'System Integrations',
+                description: 'Seamless integration with SAP, Oracle ERP, E2Open, WiseTech Global, 3PL systems, and customs portals. API design, data mapping, and real-time connectivity.'
               },
               {
                 icon: Users,
-                title: 'Managed Support Services',
-                items: [
-                  'Ongoing business support',
-                  'Feature enhancements',
-                  'Compliance updates',
-                  'SLA-driven service model'
-                ]
-              },
-              {
-                icon: FileText,
-                title: 'Digital Transformation',
-                items: [
-                  'Paperless documentation',
-                  'Cloud-based solutions',
-                  'Real-time tracking & visibility',
-                  'Advanced analytics & reporting'
-                ]
+                title: 'Training & Advisory for GTM Teams',
+                description: 'Customized training programs, best practice workshops, and ongoing advisory support to maximize platform ROI and team productivity.'
               }
             ].map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="text-blue-600" size={28} />
+                <Card key={index} className="p-8 hover:shadow-lg transition-all border border-gray-200 group">
+                  <div className="bg-blue-900 w-14 h-14 rounded flex items-center justify-center mb-6 group-hover:bg-blue-800 transition-colors">
+                    <Icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <ul className="space-y-2">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="text-gray-600 text-sm flex items-start">
-                        <span className="text-blue-600 mr-2">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 </Card>
               );
             })}
@@ -477,27 +207,26 @@ const Home = () => {
       </section>
 
       {/* Industries Section */}
-      <section id="industries" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Industries We Support</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+      <section id="industries" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+            <p className="text-lg text-gray-600">Delivering specialized GTM expertise across global sectors</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { name: 'Manufacturing', icon: Settings },
-              { name: 'Retail & E-commerce', icon: Ship },
               { name: 'Automotive', icon: TrendingUp },
-              { name: 'Pharma & Chemicals', icon: Shield },
-              { name: 'Electronics', icon: Globe },
-              { name: 'Logistics & Freight', icon: Ship }
+              { name: 'Pharmaceutical', icon: Shield },
+              { name: 'Retail', icon: Award },
+              { name: 'High-Tech', icon: Zap }
             ].map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                  <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="text-blue-600" size={32} />
+                <Card key={index} className="p-6 text-center hover:shadow-lg transition-all border border-gray-200">
+                  <div className="bg-blue-50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="text-blue-900" size={28} />
                   </div>
                   <h3 className="text-gray-900 font-semibold">{industry.name}</h3>
                 </Card>
@@ -508,46 +237,292 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-20 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Choose Us</h2>
-            <div className="w-20 h-1 bg-white mx-auto"></div>
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Illur Consulting</h2>
+            <p className="text-lg text-gray-600">Proven expertise delivering measurable results for global enterprises</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              'Deep GTM domain expertise',
-              'Faster implementation with proven frameworks',
-              'Cost-effective consulting model',
-              '100% transparent communication',
-              'Onshore + Offshore hybrid delivery',
-              'Better ROI & faster deployment'
-            ].map((reason, index) => (
-              <div key={index} className="flex items-center space-x-3 bg-white bg-opacity-10 p-4 rounded-lg">
-                <CheckCircle className="text-white flex-shrink-0" size={24} />
-                <span className="text-white font-medium">{reason}</span>
-              </div>
-            ))}
+              {
+                icon: Award,
+                title: '18+ Years GTM Expertise',
+                description: 'Deep domain knowledge in trade compliance and GTM platforms'
+              },
+              {
+                icon: Target,
+                title: 'Global-Scale Deployments',
+                description: 'Delivered enterprise implementations across continents'
+              },
+              {
+                icon: Zap,
+                title: 'Process + Technology',
+                description: 'Strong alignment between business process and technical implementation'
+              },
+              {
+                icon: CheckCircle,
+                title: 'Fortune 100 Track Record',
+                description: 'Trusted by leading global enterprises for critical projects'
+              }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="text-white" size={32} />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+      {/* Case Studies Section */}
+      <section id="case-studies" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+            <p className="text-lg text-gray-600">Real-world impact from our GTM implementations</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Case Study 1 - E2Open Donaldson */}
+            <Card className="p-8 border border-gray-200 hover:shadow-xl transition-all">
+              <div className="bg-blue-50 px-3 py-1 rounded-full text-blue-900 text-xs font-semibold inline-block mb-4">
+                E2OPEN
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Donaldson Company - Global Trade Platform</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Led end-to-end E2Open GTM implementation for a Fortune 500 manufacturing leader, streamlining customs compliance across 40+ countries.
+              </p>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">Reduced compliance processing time by 60%</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">Automated 90% of documentation workflows</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">Go-live on schedule with zero downtime</span>
+                </div>
+              </div>
+              <Button variant="outline" className="w-full border-blue-900 text-blue-900 hover:bg-blue-50">
+                View Full Case Study
+              </Button>
+            </Card>
+
+            {/* Case Study 2 - Template */}
+            <Card className="p-8 border border-gray-200 hover:shadow-xl transition-all bg-blue-50 bg-opacity-30">
+              <div className="bg-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-semibold inline-block mb-4">
+                [PLATFORM NAME]
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">[Client Name] - [Project Title]</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                [Brief description of the project, challenge addressed, and scope of work. 2-3 sentences about what was delivered.]
+              </p>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">[Key measurable outcome #1]</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">[Key measurable outcome #2]</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">[Key measurable outcome #3]</span>
+                </div>
+              </div>
+              <Button variant="outline" className="w-full border-gray-400 text-gray-700 hover:bg-gray-100">
+                View Full Case Study
+              </Button>
+            </Card>
+
+            {/* Case Study 3 - Template */}
+            <Card className="p-8 border border-gray-200 hover:shadow-xl transition-all bg-blue-50 bg-opacity-30">
+              <div className="bg-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-semibold inline-block mb-4">
+                [PLATFORM NAME]
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">[Client Name] - [Project Title]</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                [Brief description of the project, challenge addressed, and scope of work. 2-3 sentences about what was delivered.]
+              </p>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">[Key measurable outcome #1]</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">[Key measurable outcome #2]</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="text-green-600" size={16} />
+                  <span className="text-gray-700">[Key measurable outcome #3]</span>
+                </div>
+              </div>
+              <Button variant="outline" className="w-full border-gray-400 text-gray-700 hover:bg-gray-100">
+                View Full Case Study
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+            <p className="text-lg text-gray-600">What our clients say about working with us</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial Template 1 */}
+            <Card className="p-8 border border-gray-200 relative">
+              <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
+              <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
+                "[Insert client testimonial text here. Share specific feedback about the project, expertise, and results delivered. Keep it authentic and specific.]"
+              </p>
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-bold text-gray-900">[Client Name]</p>
+                <p className="text-sm text-gray-600">[Title], [Company Name]</p>
+              </div>
+            </Card>
+
+            {/* Testimonial Template 2 */}
+            <Card className="p-8 border border-gray-200 relative">
+              <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
+              <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
+                "[Insert client testimonial text here. Share specific feedback about the project, expertise, and results delivered. Keep it authentic and specific.]"
+              </p>
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-bold text-gray-900">[Client Name]</p>
+                <p className="text-sm text-gray-600">[Title], [Company Name]</p>
+              </div>
+            </Card>
+
+            {/* Testimonial Template 3 */}
+            <Card className="p-8 border border-gray-200 relative">
+              <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
+              <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
+                "[Insert client testimonial text here. Share specific feedback about the project, expertise, and results delivered. Keep it authentic and specific.]"
+              </p>
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-bold text-gray-900">[Client Name]</p>
+                <p className="text-sm text-gray-600">[Title], [Company Name]</p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section with Tabs */}
+      <section id="about" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Illur Consulting</h2>
+            <p className="text-lg text-gray-600">Boutique expertise with enterprise-scale impact</p>
+          </div>
+
+          <Tabs defaultValue="company" className="max-w-5xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
+              <TabsTrigger value="company" className="text-base">About the Company</TabsTrigger>
+              <TabsTrigger value="leadership" className="text-base">Leadership</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="company" className="space-y-6">
+              <Card className="p-8 border border-gray-200">
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Illur Consulting LLP is a boutique consulting firm specializing in Global Trade Management (GTM) system implementations and trade compliance optimization. We partner with Fortune 100 enterprises to deploy and maximize platforms like E2Open, WiseTech Global, SAP GTS, and Oracle GTM.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Our approach combines deep technical expertise with real-world trade operations experience, ensuring implementations that are not just technically sound, but operationally transformative.
+                </p>
+              </Card>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="p-6 border-l-4 border-blue-900">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    To be the trusted partner for global enterprises seeking seamless, compliant, and digitally-powered international trade operations.
+                  </p>
+                </Card>
+
+                <Card className="p-6 border-l-4 border-blue-900">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Deliver GTM implementations with clarity, precision, and measurable business impact—helping enterprises grow through strategic trade automation.
+                  </p>
+                </Card>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="leadership">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Prasanna Kumar Illur */}
+                <Card className="p-8 text-center border border-gray-200">
+                  <div className="relative inline-block mb-6">
+                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center mx-auto shadow-lg">
+                      <span className="text-white text-4xl font-bold">PI</span>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Prasanna Kumar Illur</h3>
+                  <p className="text-blue-900 font-semibold mb-4">Founder & Principal Consultant</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Prasanna brings 18+ years of expertise in Global Trade Management, specializing in E2Open, WiseTech Global, and SAP GTM implementations. As a Senior Manager with both technical development and GTM consulting experience, he has led enterprise-scale deployments for Fortune 100 clients across automotive, manufacturing, and high-tech sectors.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    His unique blend of Java development background and deep trade compliance knowledge enables him to bridge the gap between technology and business operations—delivering solutions that are both technically robust and operationally transformative.
+                  </p>
+                </Card>
+
+                {/* Manasa Prasanna Illur */}
+                <Card className="p-8 text-center border border-gray-200">
+                  <div className="relative inline-block mb-6">
+                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-900 to-purple-700 flex items-center justify-center mx-auto shadow-lg">
+                      <span className="text-white text-4xl font-bold">MI</span>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Manasa Prasanna Illur</h3>
+                  <p className="text-blue-900 font-semibold mb-4">Director - Finance & Legal</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Manasa oversees financial operations, accounts management, and legal compliance for Illur Consulting. Her meticulous approach ensures the company maintains the highest standards of business integrity and regulatory adherence.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    She plays a critical role in client relationship management and ensures seamless operations, allowing the consulting team to focus on delivering exceptional GTM implementations.
+                  </p>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Let's Talk About Your GTM Challenges</h2>
+            <p className="text-lg text-gray-600">Schedule a consultation to discuss how we can help</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Contact Information */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-              <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+              <div className="space-y-6 mb-8">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="text-blue-600 flex-shrink-0 mt-1" size={24} />
+                  <MapPin className="text-blue-900 flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
                     <p className="text-gray-600">Bangalore, India</p>
@@ -555,7 +530,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Phone className="text-blue-600 flex-shrink-0 mt-1" size={24} />
+                  <Phone className="text-blue-900 flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
                     <p className="text-gray-600">+91 9663510316</p>
@@ -563,7 +538,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="text-blue-600 flex-shrink-0 mt-1" size={24} />
+                  <Mail className="text-blue-900 flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
                     <p className="text-gray-600">info@illurconsulting.com</p>
@@ -571,24 +546,31 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* WhatsApp Button */}
-              <div className="mt-8">
+              {/* Quick Connect Buttons */}
+              <div className="space-y-3">
                 <Button
                   onClick={handleWhatsAppClick}
-                  className="bg-green-500 hover:bg-green-600 text-white w-full py-6 text-lg flex items-center justify-center space-x-2"
+                  className="bg-green-600 hover:bg-green-700 text-white w-full py-6 text-base flex items-center justify-center gap-2"
                 >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                   </svg>
-                  <span>Message us on WhatsApp</span>
+                  Message on WhatsApp
+                </Button>
+                <Button
+                  onClick={() => scrollToSection('contact')}
+                  variant="outline"
+                  className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 w-full py-6 text-base"
+                >
+                  Schedule a Call
                 </Button>
               </div>
             </div>
 
             {/* Contact Form */}
             <div>
-              <Card className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+              <Card className="p-6 border border-gray-200">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
@@ -598,7 +580,8 @@ const Home = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      placeholder="Your name"
+                      placeholder="John Doe"
+                      className="h-12"
                     />
                   </div>
 
@@ -610,7 +593,8 @@ const Home = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      placeholder="your.email@example.com"
+                      placeholder="john.doe@company.com"
+                      className="h-12"
                     />
                   </div>
 
@@ -621,7 +605,8 @@ const Home = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      placeholder="Your company name"
+                      placeholder="Your Company Name"
+                      className="h-12"
                     />
                   </div>
 
@@ -632,7 +617,8 @@ const Home = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="+91 XXXXX XXXXX"
+                      placeholder="+1 (555) 000-0000"
+                      className="h-12"
                     />
                   </div>
 
@@ -644,11 +630,11 @@ const Home = () => {
                       onChange={handleInputChange}
                       required
                       rows={4}
-                      placeholder="Tell us about your requirements..."
+                      placeholder="Tell us about your GTM challenges and requirements..."
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6">
+                  <Button type="submit" className="w-full bg-blue-900 hover:bg-blue-800 text-white py-6 text-base">
                     Send Message
                   </Button>
                 </form>
@@ -660,44 +646,45 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Illur Consulting LLP</h3>
-              <p className="text-gray-400">
-                Global Trade Management, Compliance & Digital Transformation Experts
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="md:col-span-2">
+              <h3 className="text-2xl font-bold mb-2">ILLUR CONSULTING</h3>
+              <p className="text-gray-400 text-sm mb-4">Lead with Clarity, Grow with Strategy</p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Boutique GTM consulting firm specializing in E2Open, WiseTech Global, SAP GTS, and Oracle implementations for global enterprises.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <div className="space-y-2">
-                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">
-                  About Us
-                </button>
-                <button onClick={() => scrollToSection('services')} className="block text-gray-400 hover:text-white transition-colors">
+                <button onClick={() => scrollToSection('services')} className="block text-gray-400 hover:text-white transition-colors text-sm">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('industries')} className="block text-gray-400 hover:text-white transition-colors">
+                <button onClick={() => scrollToSection('industries')} className="block text-gray-400 hover:text-white transition-colors text-sm">
                   Industries
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">
-                  Contact
+                <button onClick={() => scrollToSection('case-studies')} className="block text-gray-400 hover:text-white transition-colors text-sm">
+                  Case Studies
+                </button>
+                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors text-sm">
+                  About
                 </button>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-              <div className="space-y-2 text-gray-400">
+              <h3 className="text-lg font-bold mb-4">Contact</h3>
+              <div className="space-y-2 text-gray-400 text-sm">
                 <p>Bangalore, India</p>
-                <p>Phone: +91 9663510316</p>
-                <p>Email: info@illurconsulting.com</p>
+                <p>+91 9663510316</p>
+                <p>info@illurconsulting.com</p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
             <p>&copy; 2025 Illur Consulting LLP. All rights reserved.</p>
           </div>
         </div>
