@@ -63,12 +63,15 @@ const Home = () => {
       <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="inline-block">
-              <div className="relative inline-block">
-                <span className="text-2xl font-extrabold text-blue-900 tracking-wider">ILLUR CONSULTING</span>
-                <div className="h-1 bg-gradient-to-r from-blue-900 to-blue-500 mt-1 rounded-full"></div>
+            <div className="flex items-center gap-3">
+              <div className="relative w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center overflow-hidden">
+                <span className="text-white text-xl font-black tracking-tighter relative z-10">IC</span>
+                <div className="absolute bottom-0 right-0 w-5 h-5 bg-blue-500 rounded-tl-full"></div>
               </div>
-              <div className="text-[9px] text-gray-600 tracking-widest mt-1.5 font-medium">LEAD WITH CLARITY, GROW WITH STRATEGY</div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-extrabold text-blue-900 tracking-wide">ILLUR CONSULTING</span>
+                <span className="text-[9px] text-gray-600 tracking-widest font-medium">LEAD WITH CLARITY, GROW WITH STRATEGY</span>
+              </div>
             </div>
 
             {/* Desktop Navigation */}
