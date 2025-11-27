@@ -320,7 +320,7 @@ const Home = () => {
               <div 
                 className="h-40 bg-cover bg-center relative"
                 style={{
-                  backgroundImage: 'linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab)'
+                  backgroundImage: 'linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80&auto=format&fit=crop)'
                 }}
               >
                 <div className="absolute top-4 left-4">
