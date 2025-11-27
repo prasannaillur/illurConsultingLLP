@@ -38,12 +38,8 @@ const Home = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you soon.');
-    setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-  };
+  // Form will be submitted directly to FormSubmit - no handler needed
+  // FormSubmit will handle the submission and redirect
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
