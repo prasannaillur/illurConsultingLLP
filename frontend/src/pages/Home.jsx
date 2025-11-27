@@ -139,27 +139,27 @@ const Home = () => {
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
             <div className="max-w-4xl text-white">
-              <div className="inline-block px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
+              <div className="inline-block px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-4">
                 Global Trade Management Specialists
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 Enterprise GTM Implementation & Trade Compliance Excellence
               </h1>
-              <p className="text-xl text-gray-100 mb-8 leading-relaxed max-w-3xl">
+              <p className="text-base md:text-lg text-gray-100 mb-6 leading-relaxed max-w-3xl">
                 We help global enterprises deploy and optimize E2Open, WiseTech Global, and SAP GTM platforms—streamlining customs compliance, reducing duty spend, and accelerating cross-border operations.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button
                   onClick={() => scrollToSection('contact')}
-                  className="bg-white hover:bg-gray-100 text-blue-900 px-8 py-6 text-base font-medium rounded flex items-center gap-2"
+                  className="bg-white hover:bg-gray-100 text-blue-900 px-6 py-3 text-sm font-semibold rounded shadow-lg flex items-center gap-2"
                 >
                   Book a Consultation
-                  <ArrowRight size={18} />
+                  <ArrowRight size={16} />
                 </Button>
                 <Button
                   onClick={() => scrollToSection('services')}
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-6 text-base font-medium rounded"
+                  className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-900 px-6 py-3 text-sm font-semibold rounded shadow-lg"
                 >
                   Explore Services
                 </Button>
