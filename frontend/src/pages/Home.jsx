@@ -59,14 +59,13 @@ const Home = () => {
       <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-3">
-              <div className="relative w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center overflow-hidden">
-                <span className="text-white text-xl font-black tracking-tighter relative z-10">IC</span>
-                <div className="absolute bottom-0 right-0 w-5 h-5 bg-blue-500 rounded-tl-full"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-extrabold text-blue-900 tracking-wide">ILLUR CONSULTING</span>
-                <span className="text-[9px] text-gray-600 tracking-widest font-medium">LEAD WITH CLARITY, GROW WITH STRATEGY</span>
+            <div className="inline-block">
+              <div className="bg-blue-900 px-6 py-3 rounded-lg relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-white opacity-10 rounded-full transform translate-x-6 -translate-y-6"></div>
+                <div className="relative z-10">
+                  <div className="text-white text-xl font-extrabold tracking-wider">ILLUR CONSULTING</div>
+                  <div className="text-white text-[9px] tracking-widest mt-1 opacity-90 font-medium">LEAD WITH CLARITY, GROW WITH STRATEGY</div>
+                </div>
               </div>
             </div>
 
