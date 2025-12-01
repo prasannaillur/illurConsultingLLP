@@ -449,7 +449,7 @@ const Home = () => {
                   <MapPin className="text-blue-900 flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
-                    <p className="text-gray-600">Bangalore, India</p>
+                    <p className="text-gray-600">MIG 318, KHB Colony, 21st Cross<br />Muddebihal 586212, Karnataka<br />India</p>
                   </div>
                 </div>
 
