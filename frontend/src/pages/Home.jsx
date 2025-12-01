@@ -75,8 +75,8 @@ const Home = () => {
               <button onClick={() => scrollToSection('industries')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
                 Industries
               </button>
-              <button onClick={() => scrollToSection('case-studies')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
-                Case Studies
+              <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
+                Testimonials
               </button>
               <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-900 transition-colors font-medium text-sm">
                 About
@@ -326,7 +326,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Donaldson Company - Global Trade Platform</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">WiseTech Global (E2Open) - Global Trade Platform</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Led end-to-end E2Open GTM implementation for a Fortune 500 manufacturing leader, streamlining customs compliance across 40+ countries.
                 </p>
@@ -341,7 +341,7 @@ const Home = () => {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle className="text-green-600" size={16} />
-                    <span className="text-gray-700">Go-live on schedule with zero downtime</span>
+                    <span className="text-gray-700">Go-live on schedule with Minimum downtime</span>
                   </div>
                 </div>
                 <Button variant="outline" className="w-full border-blue-900 text-blue-900 hover:bg-blue-50">
