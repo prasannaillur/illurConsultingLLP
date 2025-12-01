@@ -108,8 +108,8 @@ const Home = () => {
                 <button onClick={() => scrollToSection('industries')} className="text-gray-700 hover:text-blue-900 text-left">
                   Industries
                 </button>
-                <button onClick={() => scrollToSection('case-studies')} className="text-gray-700 hover:text-blue-900 text-left">
-                  Case Studies
+                <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-blue-900 text-left">
+                  Testimonials
                 </button>
                 <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-900 text-left">
                   About
