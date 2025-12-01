@@ -600,7 +600,7 @@ const Home = () => {
             <div>
               <h3 className="text-lg font-bold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-400 text-sm">
-                <p>Bangalore, India</p>
+                <p>MIG 318, KHB Colony, 21st Cross<br />Muddebihal 586212, Karnataka<br />India</p>
                 <p>+91 9663510316</p>
                 <p>info@illurconsulting.com</p>
               </div>
