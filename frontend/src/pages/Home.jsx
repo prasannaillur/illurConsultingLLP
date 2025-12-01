@@ -302,8 +302,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-24 bg-gray-50">
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
