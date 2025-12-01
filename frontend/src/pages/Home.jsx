@@ -311,39 +311,39 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial Template 1 */}
-            <Card className="p-8 border border-gray-200 relative">
+            {/* Testimonial 1 - Rosita Goetz */}
+            <Card className="p-8 border border-gray-200 relative hover:shadow-lg transition-shadow">
               <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
               <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
-                "[Insert client testimonial text here. Share specific feedback about the project, expertise, and results delivered. Keep it authentic and specific.]"
+                "Illur Consulting LLP brought exceptional technical and functional expertise to our project. Their structured approach and deep product knowledge helped us navigate complex challenges with confidence. The team was organized, dependable, and highly responsive, ensuring every milestone stayed on track. A truly professional partner — we would gladly collaborate with Illur Consulting LLP again."
               </p>
               <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-gray-900">[Client Name]</p>
-                <p className="text-sm text-gray-600">[Title], [Company Name]</p>
+                <p className="font-bold text-gray-900">Rosita Goetz</p>
+                <p className="text-sm text-gray-600">Project Manager, WiseTech Global/E2Open</p>
               </div>
             </Card>
 
-            {/* Testimonial Template 2 */}
-            <Card className="p-8 border border-gray-200 relative">
+            {/* Testimonial 2 - Steve Lamantia */}
+            <Card className="p-8 border border-gray-200 relative hover:shadow-lg transition-shadow">
               <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
               <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
-                "[Insert client testimonial text here. Share specific feedback about the project, expertise, and results delivered. Keep it authentic and specific.]"
+                "Working with Illur Consulting LLP brought structure, insight, and precision to our project delivery. Their proactive approach and deep understanding of enterprise trade systems ensured smooth execution end-to-end. A highly professional consulting partner we gladly endorse."
               </p>
               <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-gray-900">[Client Name]</p>
-                <p className="text-sm text-gray-600">[Title], [Company Name]</p>
+                <p className="font-bold text-gray-900">Steve Lamantia</p>
+                <p className="text-sm text-gray-600">AVP, WiseTech Global/E2Open</p>
               </div>
             </Card>
 
-            {/* Testimonial Template 3 */}
-            <Card className="p-8 border border-gray-200 relative">
+            {/* Testimonial 3 - Mike Thompson */}
+            <Card className="p-8 border border-gray-200 relative hover:shadow-lg transition-shadow">
               <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
               <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
-                "[Insert client testimonial text here. Share specific feedback about the project, expertise, and results delivered. Keep it authentic and specific.]"
+                "Illur Consulting LLP brought exceptional technical and functional expertise to our project, guiding us through complex challenges with clarity and confidence. Their organized, dependable, and highly responsive approach kept every milestone on track. A truly professional partner we would be glad to collaborate with again."
               </p>
               <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-gray-900">[Client Name]</p>
-                <p className="text-sm text-gray-600">[Title], [Company Name]</p>
+                <p className="font-bold text-gray-900">Mike Thompson</p>
+                <p className="text-sm text-gray-600">Director, Trade Forward</p>
               </div>
             </Card>
           </div>
