@@ -482,7 +482,7 @@ const Home = () => {
                   Message on WhatsApp
                 </Button>
                 <Button
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => window.location.href = 'mailto:info@illurconsulting.com?subject=Schedule a Consultation Call'}
                   variant="outline"
                   className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 w-full py-6 text-base"
                 >
