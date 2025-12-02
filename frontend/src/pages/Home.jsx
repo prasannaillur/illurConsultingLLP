@@ -482,7 +482,7 @@ const Home = () => {
                   Message on WhatsApp
                 </Button>
                 <Button
-                  onClick={() => window.location.href = 'mailto:info@illurconsulting.com?subject=Schedule a Consultation Call'}
+                  onClick={() => window.location.href = 'mailto:info@illurconsulting.com?subject=Schedule a Consultation Call&body=Hello Illur Consulting Team,%0D%0A%0D%0AI would like to schedule a consultation call to discuss my Global Trade Management requirements.%0D%0A%0D%0AMy preferred time slots:%0D%0A- [Please specify your preferred date and time]%0D%0A%0D%0ACompany: [Your Company Name]%0D%0AYour Role: [Your Title]%0D%0APhone: [Your Contact Number]%0D%0A%0D%0ABrief overview of requirements:%0D%0A[Please describe your GTM challenges or project needs]%0D%0A%0D%0AThank you,%0D%0A[Your Name]'}
                   variant="outline"
                   className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 w-full py-6 text-base"
                 >
