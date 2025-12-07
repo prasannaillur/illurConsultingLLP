@@ -327,7 +327,7 @@ const Home = () => {
             <Card className="p-8 border border-gray-200 relative hover:shadow-lg transition-shadow">
               <Quote className="text-blue-900 opacity-20 absolute top-6 right-6" size={40} />
               <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
-                "Working with Illur Consulting LLP brought structure, insight, and precision to our project delivery. Their proactive approach and deep understanding of enterprise trade systems ensured smooth execution end-to-end. A highly professional consulting partner we gladly endorse."
+                "I've had the privilege of working with prasanna for over a deccade. His umnatched combination of global trade domain expertise and technical leadership consistently delivers smooth, efficient project outcomes. I confidently endorse Prasanna and Illur Consulting LLP as a trusted partner for enterprise tradde system solutions."
               </p>
               <div className="border-t border-gray-200 pt-4">
                 <p className="font-bold text-gray-900">Steve Lamantia</p>
